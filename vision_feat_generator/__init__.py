@@ -1,0 +1,1 @@
+from vision_feat_generator.vision_feat_generator import VisionFeatGenerator

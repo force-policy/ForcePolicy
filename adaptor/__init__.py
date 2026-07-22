@@ -1,0 +1,1 @@
+from adaptor.adaptor import DataAdaptor
