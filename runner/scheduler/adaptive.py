@@ -208,7 +208,7 @@ class AdaptiveScheduler(SchedulerBase):
             dt = 1.0 / self.config.sync_frequency,
         )
         dtw_latency = time.time() - tic
-        dtw_latency_idx = int(dtw_latency / self.planner_dt)
+        dtw_latency_idx = int(np.ceil(dtw_latency * self.config.sync_frequency) + 1)
 
         logger.debug(
             f"DTW dropout: {len(pred_trajs)} raw points -> start_idx = {start_idx} + {dtw_latency_idx} (dtw latency); keep {len(pred_trajs) - start_idx - dtw_latency_idx} points",
